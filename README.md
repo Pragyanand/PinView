@@ -51,7 +51,7 @@ No installation. No dependencies. A single portable file.
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/PinView.git
+git clone https://github.com/pragyanand/PinView.git
 cd PinView
 
 # Install dependencies
