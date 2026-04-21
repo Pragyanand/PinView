@@ -6,6 +6,14 @@ REM ─────────────────────────�
 REM Ensure script runs from its own folder
 cd /d %~dp0
 
+REM Verify Python is available
+python --version >nul 2>&1
+IF %ERRORLEVEL% NEQ 0 (
+    echo ERROR: Python is not installed or not in PATH.
+    pause
+    exit /b 1
+)
+
 echo.
 echo [1/4] Cleaning old builds...
 rmdir /s /q build 2>nul
