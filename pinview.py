@@ -187,6 +187,7 @@ class PinView:
         self.root.title("PinView")
         self.root.overrideredirect(True)
         self.root.attributes("-topmost", True)
+        self.root.attributes("-alpha", 0.92)
         self.root.configure(bg="#1a1a1a")
         self.root.minsize(self.MIN_W, self.MIN_H)
 
@@ -440,10 +441,8 @@ class PinView:
         nh = max(1, int(oh * scale))
         img = img.resize((nw, nh), Image.LANCZOS)
 
-        if img.mode == "RGBA":
-            r2, g, b, a = img.split()
-            a = a.point(lambda x: int(x * self.opacity))
-            img.putalpha(a)
+        # Opacity is controlled at the window level via root.attributes("-alpha")
+        # so we no longer manipulate the per-pixel alpha here.
 
         self.tk_image = ImageTk.PhotoImage(img)
         self.canvas.delete("img")
@@ -457,7 +456,7 @@ class PinView:
     def _on_opacity_change(self, val):
         self.opacity = float(val)
         self.opacity_lbl.config(text=f"{int(self.opacity*100)}%")
-        self._render_image()
+        self.root.attributes("-alpha", self.opacity)
 
     def _opacity_step(self, d):
         v = max(0.1, min(1.0, self.opacity + d))
