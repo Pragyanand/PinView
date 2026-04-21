@@ -28,7 +28,7 @@ Ever needed to glance at a reference image, a diagram, or a screenshot while wor
 
 - 🖼️ **Open any image** or **paste a screenshot** and it stays pinned on top of everything
 - 📋 **Auto-detects clipboard** — take a screenshot with `Win+Shift+S` and PinView loads it instantly
-- 👻 **Adjust opacity** — see through the overlay to your work underneath (sweet spot: 40–60%)
+- 👻 **Adjust window opacity** — the entire overlay becomes transparent so you can see your work underneath (sweet spot: 40–60%)
 - 🔍 **Zoom & rotate** without resizing the window
 - 🔒 **Lock position** so you never accidentally drag it away
 - ⚡ **Portable EXE** — no installation, no Python needed. Just download and run.
